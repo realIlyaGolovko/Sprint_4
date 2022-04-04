@@ -1,6 +1,7 @@
 package ru.yandex.praktikum;
 import static org.junit.Assert.assertEquals;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ public class AccountTest {
     public static Object[][] getNameData(){
         return new Object[][]
                 {
-                        //в пустая строка
+                        // пустая строка
                         {"",false},
                         //1 символ
                         {"П",false},
@@ -55,7 +56,8 @@ public class AccountTest {
     }
 
     @Test
-    @DisplayName("Проверка соответствия подаваемого имени формату")
+    @DisplayName("Параметризированная проверка соответствия подаваемого имени формату")
+    @Description("метод checkNameToEmboss класса Account")
     public void  checkNameToEmbossParametrizedReturnTrueOrFalse(){
         Account account=new Account(actualName);
         boolean actualResult=account.checkNameToEmboss();
