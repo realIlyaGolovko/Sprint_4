@@ -21,8 +21,13 @@ public class Account {
              Этот метод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
              Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
          */
-
-        Matcher matcher=pattern.matcher(name);
-        return matcher.matches();
+        //добавил проверку на null в имени
+        if (name==null){
+            return false;
+        }
+        else {
+            Matcher matcher = pattern.matcher(name);
+            return matcher.matches();
+        }
     }
 }
